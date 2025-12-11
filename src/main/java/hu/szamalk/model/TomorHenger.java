@@ -9,7 +9,7 @@ public class TomorHenger extends MertaniHenger{
     }
 
     public TomorHenger(double r,double m){
-        this(r, m,0);
+        this(r, m,1);
 	}
 
     public double getFajsuly(){
