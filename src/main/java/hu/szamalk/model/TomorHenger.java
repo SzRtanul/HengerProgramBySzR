@@ -1,21 +1,36 @@
 package hu.szamalk.model;
 
-public abstract class TomorHenger extends MertaniHenger{
+public class TomorHenger extends MertaniHenger{
     private double fajsuly;
+
+    public TomorHenger(double r,double m, double fs){
+        super(r, m);
+        setFajsuly(fs);
+    }
+
     public TomorHenger(double r,double m){
-		super();
+        this(r, m,0);
 	}
-    public double TomorHenger(double r,double m, double fs){
-		return 0;
-	}
+
     public double getFajsuly(){
-		return 0;
+		return fajsuly;
 	}
+
     public double setFajsuly(double fs){
-		return 0;
+		return this.fajsuly = fs;
 	}
+
+    public double suly(){
+        return terfogat() * fajsuly;
+    }
+
     @Override
-    public String toString(){
-		return "";
-	}
+    public String toString() {
+        return "TomorHenger{\n" +
+                "\n\tsugar=" + this.getSugar() +
+                "\n\tmagassag=" + this.getMagassag() +
+                "\n\tterfogat=" + this.terfogat() +
+                "\n\tfajsuly=" + this.getFajsuly() +
+                "\n}";
+    }
 }

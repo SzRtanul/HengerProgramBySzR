@@ -1,14 +1,44 @@
 package hu.szamalk.model;
-;
-public abstract class MertaniHenger {
-    private int hengerDarab;
+public class MertaniHenger {
+    private static int hengerDarab;
     private double sugar, magassag;
-    public abstract double Henger(double r,double m);
-    public abstract double getSugar();
-    public abstract void getMagassag();
-    public abstract void setSugar(double r);
-    public abstract double setMagassag(double m);
-    public abstract String toString();
-    public abstract double terfogat();
-    public abstract int getHengerDarab();
-};
+
+    public MertaniHenger(double r,double m){
+		setSugar(r);
+        setMagassag(m);
+        MertaniHenger.hengerDarab++;
+	}
+
+    public double getSugar(){
+		return sugar;
+	}
+
+    public double getMagassag(){
+        return magassag;
+	}
+
+    public void setSugar(double r){
+        this.sugar = r;
+	}
+
+    public void setMagassag(double m){
+		this.magassag = m;
+	}
+
+    public double terfogat(){
+		return 2 * sugar * Math.PI + 2 * sugar * Math.PI * magassag;
+	}
+
+    public static int getHengerDarab(){
+		return hengerDarab;
+	}
+
+    @Override
+    public String toString() {
+        return "MertaniHenger{" +
+                "\n\tsugar=" + sugar +
+                "\n\tmagassag=" + magassag +
+                "\n\tterfogat=" + terfogat() +
+                "\n}";
+    }
+}
